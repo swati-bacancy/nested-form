@@ -10,8 +10,8 @@
           <th>Description</th>
           <th>
             <div class="form-actions">
-              <%= link_to  'javascript:void(0)',class:"green darken-2 btn add_record",data:{ 
-                            id:@nested_id, 
+              <%= link_to  'javascript:void(0)',class:"green darken-2 btn add_record",data:{
+                            id:@nested_id,
                             "nested-html":nested_content(:tasks,form,@nested_id).html_safe
                            } do %>
                 <i class='fa fa-plus'></i>
@@ -26,7 +26,7 @@
         <% end %>
       </tbody>
   </table>
-  
+
   <div class="divider"></div>
   <div class="divider"></div>
   <div class="divider"></div>

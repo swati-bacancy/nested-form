@@ -31,7 +31,7 @@ $(document).on('turbolinks:load', function() {
   	console.log("test")
     var regexp, time;
     time = new Date().getTime();
-    regexp = new RegExp($(this).data('id'), 'g'); 
+    regexp = new RegExp($(this).data('id'), 'g');
     $('#tasks').append($(this).data('nested-html').replace(regexp, time));
     return event.preventDefault();
   });
