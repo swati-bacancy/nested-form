@@ -4,20 +4,18 @@
   <td><%= f.input :description, label: false %></td>
   <td>
     <%= f.input_field :_destroy, as: :hidden %>
-    <%= link_to 'javascript:void(0)', class: 'destroy_record btn red darken-4' do %>
+    <%= link_to 'javascript:void(0)', class: 'destroy_record btn red darken-4 ' do %>
     	<i class="fa fa-remove fa-2x"></i>
    	<% end -%>
-      <%= link_to  'javascript:void(0)',class:"green darken-2 btn",data:{
-                    id:'1@nested_id',
-                    "nested-html":nested_content(:comments,f,'1').html_safe
+      <%= link_to  'javascript:void(0)',class:"green darken-2 btn add_nested_record",data:{
+                    id:@nested_id,
+                    "nested-html-abc":nested_comment_content(:comments,f,@nested_id).html_safe
                    } do %>
         <i class='fa fa-plus'></i>
       <% end -%>
   </td>
 </tr>
 
-<tr>
-  <%= f.simple_fields_for :comments do |a| %>
-  <%= render 'task', f: a %>
-  <% end %>
-</tr>
+<%= f.fields_for :comments do |comment| %>
+<%= render 'comment', comment: comment %>
+<% end %>
