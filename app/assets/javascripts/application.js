@@ -28,11 +28,24 @@ $(document).on('turbolinks:load', function() {
   });
 
   $('form').on('click', '.add_record', function(event) {
-  	console.log("test")
+  	console.log("test");
+    debugger;
     var regexp, time;
     time = new Date().getTime();
     regexp = new RegExp($(this).data('id'), 'g');
     $('#tasks').append($(this).data('nested-html').replace(regexp, time));
+    debugger
+    return event.preventDefault();
+  });
+
+  $('form').on('click', '.add-comments', function(event) {
+    debugger;
+  	console.log("test");
+    var regexp, time;
+    time = new Date().getTime();
+    regexp = new RegExp($(this).data('id'), 'g');
+    $('#aaa').append($(this).data('nested-html').replace("1", time));
+    debugger
     return event.preventDefault();
   });
 });
