@@ -48,4 +48,14 @@ $(document).on('turbolinks:load', function() {
     debugger
     return event.preventDefault();
   });
+
+  $('form').on('click', '.add_nested_record', function(event) {
+  	console.log("nested")
+    var regexp, time;
+    time = new Date().getTime();
+    debugger;
+    regexp = new RegExp($(this).data('id'), 'g');
+    $('#comments').append($(this).data('nested-html-abc').replace(regexp, time));
+    return event.preventDefault();
+  });
 });

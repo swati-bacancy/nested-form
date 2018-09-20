@@ -5,7 +5,7 @@ module ApplicationHelper
     end.gsub("\n",'')
   end
 
-  def nested_content_nested(association,f, id)
+  def nested_comment_content(association,f, id)
   	f.simple_fields_for(association, Comment.new, child_index: id) do |builder|
       render(association.to_s.singularize, comment: builder)
     end.gsub("\n",'')
